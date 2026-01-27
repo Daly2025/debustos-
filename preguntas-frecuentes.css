@@ -1,42 +1,114 @@
+/* ------------------------------
+   FONDO GENERAL
+------------------------------ */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #efe9ff; /* violeta claro elegante */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* ------------------------------
+   CONTENEDOR FAQ
+------------------------------ */
+
 .faq-section {
-    background: var(--secondary-color);
+    background: #ffffff;
     padding: 4rem 2rem;
     max-width: 1100px;
-    margin: 2rem auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin: 3rem auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.12);
 }
+
+/* ------------------------------
+   ITEMS
+------------------------------ */
+
 .faq-item {
     margin-bottom: 1.5rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #e5e5e5;
 }
+
+/* ------------------------------
+   BOTÓN DEL ACORDEÓN
+------------------------------ */
+
 .accordion {
     width: 100%;
-    padding: 1rem;
+    padding: 1.2rem;
     text-align: left;
-    background: transparent;
+    background: #f4f2ff; /* violeta MUY suave */
     border: none;
-    font-size: 1.1rem;
-    font-weight: bold;
+    font-size: 1.15rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: color 0.3s ease;
-    white-space: normal; /* Asegura que el texto de la pregunta se ajuste */
-    word-wrap: break-word; /* Rompe palabras largas si es necesario */
+    transition: all 0.3s ease;
+    white-space: normal;
+    word-wrap: break-word;
+    border-radius: 8px;
+    position: relative;
 }
 
 .accordion:hover {
-    color: var(--accent-color);
+    background: #676768;
+    color: #6a4fbf; /* violeta más intenso */
 }
+
+.accordion.active {
+    background: #dcd3ff;
+    color: #4a35a3;
+}
+
+.accordion::after {
+    content: "+";
+    font-size: 1.6rem;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.accordion.active::after {
+    content: "–";
+}
+
+/* ------------------------------
+   PANEL DE RESPUESTA
+------------------------------ */
 
 .panel {
     padding: 0 1rem 1.5rem;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out; /* Cambiado a ease-out para una transición más suave */
-    text-align: left; /* Asegura que el texto de la respuesta se alinee a la izquierda */
-    line-height: 1.8; /* Mejora la legibilidad del texto de la respuesta */
+    transition: max-height 0.35s ease-out;
+    text-align: left;
+    line-height: 1.8;
 }
 
 .panel p {
-    margin-bottom: 0; /* Elimina el margen inferior predeterminado de los párrafos dentro del panel */
+    margin-bottom: 0;
+    color: #444;
+}
+
+/* ------------------------------
+   RESPONSIVE
+------------------------------ */
+
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .accordion {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .panel p {
+        font-size: 0.95rem;
+    }
 }

@@ -4,13 +4,69 @@
     --accent-color: #007bff;
 }
 * {margin:0;padding:0;box-sizing:border-box;}
-body {font-family:'Arial',sans-serif;line-height:1.6;color:var(--primary-color);background:var(--secondary-color);}
+html, body {
+    height: 100%; /* Asegura que html y body ocupen el 100% de la altura del viewport */
+    margin: 0;
+    overflow-x: hidden; /* Oculta el scroll horizontal, pero permite el vertical */
+}
+
+body {
+    font-family:'Arial',sans-serif;
+    line-height:1.6;
+    color:var(--primary-color);
+    background:#A9A9A9;
+    overflow-y: auto; /* Permite el scroll vertical si el menú excede la altura */
+}
+
+header {
+    background:var(--primary-color);
+    color:#fff;
+    padding:1rem 0;
+    border-bottom:var(--accent-color) 3px solid;
+    position: relative; /* Asegura que el menú se posicione respecto al header */
+}
+
+.navbar .nav-links li {
+    margin-left:20px;
+    padding: 8px 0; /* Añade espaciado vertical a cada opción del menú */
+}
+
+@media (max-width:768px) {
+    .navbar .nav-links {
+        display:none;
+        flex-direction:column;
+        width:100%;
+        background:var(--primary-color);
+        position:absolute;
+        top:100%; /* Alinea el menú con el borde inferior del header */
+        left:0;
+        padding:10px 0;
+        border-top:1px solid #555;
+        z-index:9999; /* Superpone el menú encima de la sección hero */
+    }
+    .navbar .nav-links li {
+        margin-left:0;
+        padding: 12px 20px; /* Añade espaciado horizontal a las opciones móviles */
+    }
+    .hero {
+        height: calc(100vh - 60px);
+        width: 100%;
+        overflow: visible; /* Permite que el menú se muestre encima de la imagen hero */
+    }
+}
 .container {width:90%;max-width:1100px;margin:auto;padding:0 20px;}
 .btn-primary {display:inline-block;background:var(--accent-color);color:#fff;padding:10px 20px;border-radius:5px;transition:background 0.3s ease;}
 .btn-primary:hover {background:#0056b3;text-decoration:none;}
 header {background:var(--primary-color);color:#fff;padding:1rem 0;border-bottom:var(--accent-color) 3px solid;}
 .navbar .container {display:flex;justify-content:space-between;align-items:center;}
-.navbar .logo {color:#fff;font-size:1.8rem;font-weight:bold;}
+.navbar .logo {
+    color:#fff;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 2.2rem;
+    text-decoration: underline;
+    font-style: italic;
+    color: #FFD700;
+}
 .navbar .nav-links {display:flex;}
 .navbar .nav-links li {margin-left:20px;}
 .navbar .nav-links a {color:#fff;font-weight:bold;transition:color 0.3s ease;}
@@ -20,27 +76,38 @@ header {background:var(--primary-color);color:#fff;padding:1rem 0;border-bottom:
 section {padding:60px 0;text-align:center;}
 section h1,section h2 {margin-bottom:20px;color:var(--primary-color);}
 .hero {
-    background: url('img/1000029596 (2).jpg') no-repeat center center/cover;
     color: var(--light-text-color);
-    min-height: 500px;
+    height: calc(100vh - 70px); /* Ajusta la altura del hero, restando la altura del header */
+    width: 100%; /* Ocupa todo el ancho */
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    position: relative;
+    overflow: hidden; /* Asegura que la imagen no se desborde */
 }
-.hero h1 {font-size:3.5rem;}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* La imagen cubrirá todo el contenedor, recortando si es necesario */
+    object-position: center; /* Centra la imagen */
+}
+
 @media (max-width:768px) {
     .navbar .nav-links {display:none;flex-direction:column;width:100%;background:var(--primary-color);position:absolute;top:70px;left:0;padding:10px 0;border-top:1px solid #555;}
     .navbar .nav-links.active {display:flex;}
     .navbar .hamburger-menu {display:flex;}
     .hero h1 {font-size:2.5rem;}
+    .hero {
+        height: calc(100vh - 60px); /* Ajusta la altura para móviles, restando la altura del header */
+        width: 100%; /* Ocupa todo el ancho en móviles */
+    }
+    .hero-img {
+        object-fit: cover;
+    }
 }
-.hero { height: 100vh; overflow: hidden; }
-.carousel { width: 100%; height: 100%; position: relative; }
-.carousel-items { width: 100%; height: 100%; }
-.carousel-item { display: none; width: 100%; height: 100%; }
-.carousel-item.active { display: block; }
-.carousel-img { width: 100%; height: 100%; object-fit: cover; }
-.carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); padding: 1rem; background: rgba(0,0,0,0.5); color: white; border: none; cursor: pointer; }
-.prev-btn { left: 1rem; }
-.next-btn { right: 1rem; }
+
+/* Eliminar todas las reglas CSS relacionadas con el carrusel */
+/* .carousel, .carousel-items, .carousel-item, .carousel-img, .carousel-btn, .prev-btn, .next-btn */

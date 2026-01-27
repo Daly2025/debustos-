@@ -29,41 +29,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Lógica del Carrusel
-    const carouselItems = document.querySelector('.carousel-items');
+    const carouselItems = document.querySelectorAll('.carousel-item');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
-
-    // Solo inicializar el carrusel si los elementos existen en la página
-    if (carouselItems && prevBtn && nextBtn) {
-        const items = document.querySelectorAll('.carousel-item');
-        const totalItems = items.length;
-        let currentIndex = 0;
-
-        function updateCarousel() {
-            const itemWidth = items[0].clientWidth;
-            carouselItems.style.transform = `translateX(${-currentIndex * itemWidth}px)`;
-        }
-
-        nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % totalItems;
-            updateCarousel();
+    let currentIndex = 0;
+    
+    // Función para actualizar el carrusel
+    function updateCarousel() {
+        carouselItems.forEach((item, index) => {
+            item.classList.toggle('active', index === currentIndex);
         });
-
-        prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-            updateCarousel();
-        });
-
-        // Carrusel automático
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % totalItems;
-            updateCarousel();
-        }, 5000); // Cambia de imagen cada 5 segundos
-
-        // Ajustar el carrusel si la ventana cambia de tamaño
-        window.addEventListener('resize', updateCarousel);
-
-        // Inicializar el carrusel
-        updateCarousel();
     }
+    
+    // Manejo de botones
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+        updateCarousel();
+    });
+    
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % carouselItems.length;
+        updateCarousel();
+    });
+    
+    // Rotación automática cada 5 segundos
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % carouselItems.length;
+        updateCarousel();
+    }, 5000);
+
+    // Ajustar el carrusel si la ventana cambia de tamaño
+    window.addEventListener('resize', updateCarousel);
+
+    // Inicializar el carrusel
+    updateCarousel();
 });
