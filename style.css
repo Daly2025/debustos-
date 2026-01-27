@@ -1,0 +1,29 @@
+:root {
+    --primary-color: #333;
+    --secondary-color: #f4f4f4;
+    --accent-color: #007bff;
+}
+* {margin:0;padding:0;box-sizing:border-box;}
+body {font-family:'Arial',sans-serif;line-height:1.6;color:var(--primary-color);background:var(--secondary-color);}
+.container {width:90%;max-width:1100px;margin:auto;padding:0 20px;}
+.btn-primary {display:inline-block;background:var(--accent-color);color:#fff;padding:10px 20px;border-radius:5px;transition:background 0.3s ease;}
+.btn-primary:hover {background:#0056b3;text-decoration:none;}
+header {background:var(--primary-color);color:#fff;padding:1rem 0;border-bottom:var(--accent-color) 3px solid;}
+.navbar .container {display:flex;justify-content:space-between;align-items:center;}
+.navbar .logo {color:#fff;font-size:1.8rem;font-weight:bold;}
+.navbar .nav-links {display:flex;}
+.navbar .nav-links li {margin-left:20px;}
+.navbar .nav-links a {color:#fff;font-weight:bold;transition:color 0.3s ease;}
+.navbar .nav-links a:hover {color:var(--accent-color);text-decoration:none;}
+.hamburger-menu {display:none;flex-direction:column;cursor:pointer;}
+.hamburger-menu .bar {width:25px;height:3px;background:#fff;margin:4px 0;transition:0.4s;}
+section {padding:60px 0;text-align:center;}
+section h1,section h2 {margin-bottom:20px;color:var(--primary-color);}
+.hero {background:url('https://via.placeholder.com/1500x800?text=Fondo+Micropigmentacion') no-repeat center center/cover;color:#fff;min-height:500px;display:flex;align-items:center;justify-content:center;text-shadow:2px 2px 4px rgba(0,0,0,0.5);}
+.hero h1 {font-size:3.5rem;}
+@media (max-width:768px) {
+    .navbar .nav-links {display:none;flex-direction:column;width:100%;background:var(--primary-color);position:absolute;top:70px;left:0;padding:10px 0;border-top:1px solid #555;}
+    .navbar .nav-links.active {display:flex;}
+    .navbar .hamburger-menu {display:flex;}
+    .hero h1 {font-size:2.5rem;}
+}
