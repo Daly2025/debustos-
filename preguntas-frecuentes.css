@@ -1,1 +1,42 @@
-.faq-content .faq-item {margin-bottom: 20px; border-bottom: 1px solid #eee;}
+.faq-section {
+    background: var(--secondary-color);
+    padding: 4rem 2rem;
+    max-width: 1100px;
+    margin: 2rem auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.faq-item {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+.accordion {
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    white-space: normal; /* Asegura que el texto de la pregunta se ajuste */
+    word-wrap: break-word; /* Rompe palabras largas si es necesario */
+}
+
+.accordion:hover {
+    color: var(--accent-color);
+}
+
+.panel {
+    padding: 0 1rem 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out; /* Cambiado a ease-out para una transición más suave */
+    text-align: left; /* Asegura que el texto de la respuesta se alinee a la izquierda */
+    line-height: 1.8; /* Mejora la legibilidad del texto de la respuesta */
+}
+
+.panel p {
+    margin-bottom: 0; /* Elimina el margen inferior predeterminado de los párrafos dentro del panel */
+}

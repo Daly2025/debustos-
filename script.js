@@ -1,9 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Fix hamburger menu toggle for mobile
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const navLinks = document.querySelector('.nav-links');
-
     hamburgerMenu.addEventListener('click', () => {
         navLinks.classList.toggle('active');
+    });
+    
+    // Fix FAQ accordion panel expansion
+    const accordionButtons = document.querySelectorAll('.accordion');
+    accordionButtons.forEach(accordion => {
+        accordion.addEventListener('click', function() {
+            const panel = this.nextElementSibling;
+            // Toggle panel max-height to show/hide content
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+            }
+        });
     });
 
     document.querySelectorAll('.nav-links a').forEach(link => {
