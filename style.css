@@ -35,3 +35,12 @@ section h1,section h2 {margin-bottom:20px;color:var(--primary-color);}
     .navbar .hamburger-menu {display:flex;}
     .hero h1 {font-size:2.5rem;}
 }
+.hero { height: 100vh; overflow: hidden; }
+.carousel { width: 100%; height: 100%; position: relative; }
+.carousel-items { width: 100%; height: 100%; }
+.carousel-item { display: none; width: 100%; height: 100%; }
+.carousel-item.active { display: block; }
+.carousel-img { width: 100%; height: 100%; object-fit: cover; }
+.carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); padding: 1rem; background: rgba(0,0,0,0.5); color: white; border: none; cursor: pointer; }
+.prev-btn { left: 1rem; }
+.next-btn { right: 1rem; }
