@@ -5,6 +5,12 @@ body {
     box-sizing: border-box;
     background-color: #f4f4f4;
     color: #333;
+    /* Nuevo estilo para el fondo */
+    background-image: url('img/debus.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 
 /* Estilos para la sección de contacto */
