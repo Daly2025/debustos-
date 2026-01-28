@@ -75,10 +75,11 @@ body {
 
 /* Estilos para el formulario de contacto */
 form {
-    background-color: rgba(249, 249, 249, 0.8); /* Hacemos el formulario semi-transparente */
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: transparent; /* Aseguramos que el fondo sea transparente */
+    padding: 0; /* Eliminamos cualquier padding que pueda crear un espacio blanco */
+    border: none; /* Aseguramos que no haya borde */
+    box-shadow: none; /* Eliminamos cualquier sombra */
+    margin-top: 20px;
 }
 
 .form-group {
@@ -142,10 +143,10 @@ form {
 .social-media-icons {
     text-align: center;
     margin-top: 20px;
-    padding: 20px;
-    background-color: rgba(249, 249, 249, 0.8); /* Fondo semi-transparente similar al recuadro blanco */
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Eliminado: padding: 20px; */
+    background-color: transparent; /* Cambiado a transparente */
+    /* Eliminado: border-radius: 8px; */
+    /* Eliminado: box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
 }
 
 .social-media-icons h3 {
