@@ -1,33 +1,33 @@
-body { /* Añadimos la declaración del selector body que faltaba */
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f0f0f0; /* Fondo gris claro (igual a la página "nosotros") */
+    background-color: #525050; /* Fondo de respaldo */
     color: #333;
-    /* Eliminamos la imagen de fondo para que el color gris sea visible */
-    /* background-image: url('img/debus.jpg'); */
-    /* background-size: cover; */
-    /* background-position: center; */
-    /* background-attachment: fixed; */
     min-height: 100vh;
+    background-image: url('img/texturas.avif'); /* Ruta de la textura */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 /* Estilos para la sección de contacto */
 .contact-content {
     padding: 60px 0;
-    background-color: #f0f0f0; /* Aseguramos que el main tenga el fondo gris */
+    background-color: transparent; /* Aseguramos que el main sea transparente para ver el fondo del body */
 }
 
 .contact-content .container {
     max-width: 960px;
     margin: 0 auto;
     padding: 0 20px;
-    background-color: #f0f0f0; /* Aseguramos que el contenedor tenga el fondo gris */
+    background-color: transparent; /* Aseguramos que el contenedor sea transparente */
 }
 
 .contact-info-card {
-    background-color: #f9f9f9; /* Este sí puede ser casi blanco */
+    background-color: rgba(249, 249, 249, 0.8); /* Hacemos la tarjeta semi-transparente */
     border: 1px solid #ddd;
     padding: 20px;
     margin-bottom: 30px;
@@ -75,7 +75,7 @@ body { /* Añadimos la declaración del selector body que faltaba */
 
 /* Estilos para el formulario de contacto */
 form {
-    background-color: #f9f9f9; /* Este sí puede ser casi blanco */
+    background-color: rgba(249, 249, 249, 0.8); /* Hacemos el formulario semi-transparente */
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
