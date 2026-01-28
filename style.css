@@ -15,7 +15,9 @@ body {
     line-height:1.6;
     color:var(--primary-color);
     background: #000000; /* Establecemos el fondo del body a negro para que coincida con la imagen */
-    overflow-y: auto; /* Permite el scroll vertical si el menú excede la altura */
+    background: url('img/texturas.avif') repeat;
+    background-size: cover;
+    overflow-y: auto;
 }
 
 header {
