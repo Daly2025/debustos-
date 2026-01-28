@@ -5,7 +5,12 @@
 
 body {
     font-family: 'Comic Sans MS', cursive;
-    background-color: #525050; /* Cambiado a gris claro */
+    background-color: #525050; /* Color de respaldo gris claro */
+    background-image: url("img/texturas.avif"); /* Ruta a tu imagen de textura */
+    background-repeat: no-repeat; /* Evita que la textura se repita en cuadrados */
+    background-size: cover; /* Ajusta la textura para cubrir todo el fondo sin distorsionar */
+    background-attachment: fixed; /* La textura se mantiene fija al hacer scroll */
+    background-position: center; /* Centra la textura en el fondo */
 }
 
 @keyframes slideDown {
