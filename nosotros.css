@@ -102,3 +102,20 @@ body {
 }
     /* Puedes ajustar font-size, font-weight, etc. si es necesario */
 
+.bottom-right-image {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 150px;
+    z-index: 1000;
+}
+
+@media (max-width: 768px) {
+    .bottom-right-image {
+        position: fixed; /* Aseguramos que la posición fija se aplique también en móviles */
+        bottom: 10px; /* Ajusta la distancia desde abajo para móviles si es necesario */
+        right: 10px;  /* Ajusta la distancia desde la derecha para móviles si es necesario */
+        width: 100px; /* Ajusta el tamaño para móviles si es necesario */
+    }
+}
+
