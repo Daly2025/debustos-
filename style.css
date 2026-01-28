@@ -14,7 +14,7 @@ body {
     font-family:'Arial',sans-serif;
     line-height:1.6;
     color:var(--primary-color);
-    background:#A9A9A9;
+    background: #000000; /* Establecemos el fondo del body a negro para que coincida con la imagen */
     overflow-y: auto; /* Permite el scroll vertical si el menú excede la altura */
 }
 
@@ -86,13 +86,14 @@ section h1,section h2 {margin-bottom:20px;color:var(--primary-color);}
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     position: relative;
     overflow: hidden; /* Asegura que la imagen no se desborde */
+    background-color: #000000; /* Fondo negro para que la imagen se integre perfectamente */
 }
 
 .hero-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* La imagen cubrirá todo el contenedor, recortando si es necesario */
-    object-position: center; /* Centra la imagen */
+    object-fit: contain; /* Usamos 'contain' para que la imagen completa sea visible sin recortes */
+    object-position: center;
 }
 
 @media (max-width:768px) {
@@ -101,11 +102,20 @@ section h1,section h2 {margin-bottom:20px;color:var(--primary-color);}
     .navbar .hamburger-menu {display:flex;}
     .hero h1 {font-size:2.5rem;}
     .hero {
-        height: calc(100vh - 60px); /* Ajusta la altura para móviles, restando la altura del header */
-        width: 100%; /* Ocupa todo el ancho en móviles */
+        height: calc(100vh - 70px); /* La altura restante de la ventana menos la altura del header */
+        width: 100%;
+        overflow: hidden;
+        background-color: #808080; /* Color gris para el fondo */
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+    
     .hero-img {
-        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* La imagen cubrirá todo el espacio, recortando si es necesario */
+        object-position: center;
     }
 }
 
