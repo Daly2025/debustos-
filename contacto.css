@@ -138,3 +138,45 @@ form {
     object-fit: contain;
 }
 .contact-content .form-group {margin-bottom: 20px;}
+
+.social-media-icons {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(249, 249, 249, 0.8); /* Fondo semi-transparente similar al recuadro blanco */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-media-icons h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.social-media-icons .social-icon {
+    display: inline-block;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.social-media-icons .social-icon img {
+    width: 40px; /* Ajusta el tamaño de los iconos */
+    height: 40px;
+    vertical-align: middle;
+}
+
+.social-media-icons .social-icon.facebook img {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(200deg) brightness(90%) contrast(90%); /* Color Facebook */
+}
+
+.social-media-icons .social-icon.instagram img {
+    filter: invert(37%) sepia(70%) saturate(2000%) hue-rotate(290deg) brightness(90%) contrast(90%); /* Color Instagram */
+}
+
+.social-media-icons .social-icon.twitter img {
+    filter: invert(50%) sepia(100%) saturate(2000%) hue-rotate(180deg) brightness(90%) contrast(90%); /* Color Twitter */
+}
+
+.social-media-icons .social-icon:hover {
+    transform: scale(1.2);
+}
