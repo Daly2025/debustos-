@@ -1,16 +1,90 @@
 .nosotros-content .about {
     padding: 60px 0;
-    background-color: #f9f9f9;
+    /* background-color: #f9f9f9; */ /* Eliminado para que el body controle el fondo */
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive;
+    background-color: #525050; /* Cambiado a gris claro */
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    flex-direction: row; /* Aseguramos que la dirección sea de izquierda a derecha */
+}
+
+.about-image {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 5px solid #333;
+    padding: 5px;
+    animation: slideDown 1s ease-out forwards;
+    animation-delay: 0.6s;
+    opacity: 0;
+    order: 1; /* Forzamos que la imagen sea el primer elemento (izquierda) */
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+    order: 2; /* Forzamos que el texto sea el segundo elemento (derecha) */
 }
 
 .nosotros-content h2 {
-    color: var(--primary-color);
+    font-size: 2.5em;
+    color: #FFD700; /* Color dorado */
     margin-bottom: 20px;
+    font-family: 'Comic Sans MS', cursive; /* Aseguramos que los títulos también usen Comic Sans MS */
+    font-style: italic; /* Texto en cursiva */
+    animation: slideDown 1s ease-out forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
 }
 
 .nosotros-content p {
-    color: var(--primary-color);
-    line-height: 1.8;
-    max-width: 800px;
-    margin: 0 auto;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #FFD700; /* Color dorado */
+    font-family: 'Comic Sans MS', cursive; /* Aseguramos que los párrafos también usen Comic Sans MS */
+    font-style: italic; /* Texto en cursiva */
+    animation: slideDown 1s ease-out forwards;
+    animation-delay: 0.4s;
+    opacity: 0;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* En móviles, volvemos a la disposición en columna */
+        text-align: center;
+    }
+
+    .about-image {
+        max-width: 80%;
+        margin-bottom: 20px;
+        order: unset; /* Reseteamos el orden para móviles, para que se apilen naturalmente */
+    }
+
+    .about-text {
+        order: unset; /* Reseteamos el orden para móviles */
+    }
 }
