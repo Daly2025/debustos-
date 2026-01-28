@@ -51,10 +51,10 @@ body {
 
 .nosotros-content h2 {
     font-size: 2.5em;
-    color: #FFD700; /* Color dorado */
+    color: #D4AF37; /* Cambiado a dorado clásico */
     margin-bottom: 20px;
-    font-family: 'Comic Sans MS', cursive; /* Aseguramos que los títulos también usen Comic Sans MS */
-    font-style: italic; /* Texto en cursiva */
+    font-family: 'Comic Sans MS', cursive;
+    font-style: italic;
     animation: slideDown 1s ease-out forwards;
     animation-delay: 0.2s;
     opacity: 0;
@@ -63,9 +63,9 @@ body {
 .nosotros-content p {
     font-size: 1.1em;
     line-height: 1.6;
-    color: #FFD700; /* Color dorado */
-    font-family: 'Comic Sans MS', cursive; /* Aseguramos que los párrafos también usen Comic Sans MS */
-    font-style: italic; /* Texto en cursiva */
+    color: #D4AF37; /* Cambiado a dorado clásico */
+    font-family: 'Comic Sans MS', cursive;
+    font-style: italic;
     animation: slideDown 1s ease-out forwards;
     animation-delay: 0.4s;
     opacity: 0;
