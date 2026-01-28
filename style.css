@@ -102,10 +102,10 @@ section h1,section h2 {margin-bottom:20px;color:var(--primary-color);}
     .navbar .hamburger-menu {display:flex;}
     .hero h1 {font-size:2.5rem;}
     .hero {
-        height: calc(100vh - 70px); /* La altura restante de la ventana menos la altura del header */
+        height: calc(100vh - 70px); /* Mantenemos la altura calculada para móviles, asegurando que ocupe el espacio disponible */
         width: 100%;
         overflow: hidden;
-        background-color: #808080; /* Color gris para el fondo */
+        background-color: #000000; /* Aseguramos que el fondo sea negro también en móviles */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -114,7 +114,7 @@ section h1,section h2 {margin-bottom:20px;color:var(--primary-color);}
     .hero-img {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* La imagen cubrirá todo el espacio, recortando si es necesario */
+        object-fit: contain; /* La imagen completa será visible en móviles, sin recortes */
         object-position: center;
     }
 }
