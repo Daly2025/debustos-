@@ -93,3 +93,12 @@ body {
         order: unset; /* Reseteamos el orden para móviles */
     }
 }
+
+.about h2 {
+    font-family: 'Brush Script MT', cursive, sans-serif;
+    color: #D4AF37; /* Tono más dorado, menos amarillo */
+    font-size: 3.5em;
+    font-stretch: expanded;
+}
+    /* Puedes ajustar font-size, font-weight, etc. si es necesario */
+
