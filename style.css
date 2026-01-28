@@ -127,3 +127,30 @@ section h1,section h2 {margin-bottom:20px;color:var(--primary-color);}
 
 /* Eliminar todas las reglas CSS relacionadas con el carrusel */
 /* .carousel, .carousel-items, .carousel-item, .carousel-img, .carousel-btn, .prev-btn, .next-btn */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10000;
+    background-color: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width:768px) {
+    .whatsapp-icon {
+        width: 50px;
+        height: 50px;
+    }
+}
